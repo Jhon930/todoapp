@@ -1,4 +1,4 @@
-Proyecto en react y mongodb
+Proyecto en react, node.js y mongodb
 
 para levantar backend: Ir a carpeta api y escribir npm start
 

@@ -54,7 +54,7 @@ h1 {
   border: 1px solid #0b286c;
   padding: 0.5rem 1rem;
   margin-bottom: 3rem;
-  width: 320px;
+  width: 333px;
   height: 50px;
   color: #fff;
 }
@@ -91,7 +91,7 @@ h1 {
 }
 
 .completed {
-  color: #c5aeff;
+  color: #3eaa00;
   text-decoration: line-through;
 }
 

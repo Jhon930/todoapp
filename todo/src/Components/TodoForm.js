@@ -3,7 +3,11 @@ import toast , {Toaster} from 'react-hot-toast'
 
 export const TodoForm = ({addItem}) => {
     const [input, setInput] = useState('');
-    const notify = () => toast.success('Has agregado una tarea');
+    const notify = () => toast.success('Has agregado una tarea', {
+      style: {
+        padding: '16px',
+      },
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();

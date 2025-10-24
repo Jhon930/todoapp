@@ -2,15 +2,15 @@ import React, {useState, useEffect } from "react";
 import { TodoItem } from "./TodoItem";
 import { TodoForm } from "./TodoForm";
 import { EditTodoForm } from "./EditTodoForm";
-import toast from 'react-hot-toast'
+import toast  from 'react-hot-toast'
 
 export const TodoWrapper = () => {
 
     const API_BASE = 'https://todoapp-api-zeta.vercel.app/todo'
 
     const [items, setItems] = useState([]);
-    const [input, setInput] = useState("");
-    const [completed, setCompleted] = useState(false);
+    const [, setInput] = useState("");
+    const [completed,] = useState(false);
   
     useEffect(() => {
       GetTodos();
@@ -103,18 +103,53 @@ export const TodoWrapper = () => {
                     throw new Error("Revise bien que su tarea se encuentre en el sistema");
                 }
                 setItems(items => items.filter(item => item._id !== id));
+                notifyDelete(id)
         } catch(error) {
             console.error("Tenemos un problema:", error);
         }
     }
 
+    const notifyDelete = async (id) => {
+        if(id !== null) {
+            toast.success('Tarea Finalizada.', {
+                style: {
+                    border: '1px srgb(156, 18, 0)3200',
+                    padding: '16px',
+                    color: '#C82909',
+                },
+                iconTheme: {
+                    primary: '#C82909',
+                    secondary: '#FFFAEE',
+                },
+            });
+        } else {
+            toast(
+                "Aún tienes pendiente la presente tarea. Apurése en terminarla",
+                {
+                    duration: 2000
+                }
+            )
+        }   
+    }
+
     const notify = async (completed) => {
         console.log(completed);
         if(completed !== false) {
-            toast.success("Felicitaciones, completaste una tarea.");
+            toast.success("Felicitaciones, completaste una tarea.",{
+                icon: '👏',
+                style: {
+                    border: '0b286c',
+                    padding: '16px',
+                    color: '#0b286c',
+                    textAlign: "left"
+                },
+                iconTheme: {
+                    primary: '#0b286c',
+                },
+            } );
         } else {
             toast(
-                "¿Aún tienes pendiente la presente tarea?.\n\nApurése en terminarla",
+                "¿Aún tienes pendiente la presente tarea?. Apúrese en terminarla",
                 {
                     duration: 2000
                 }
@@ -123,27 +158,28 @@ export const TodoWrapper = () => {
     }
 
     return (
-        <div className="TodoWrapper">
-            <h1>
-                TAREAS DEL DÍA<span>Una aplicación para empezar bien tu jornada</span>
-            </h1>
-            <TodoForm addItem={addItem}/>
-            {items.map((item) => 
-            item.isEditing ? (
-                <EditTodoForm getItem={editItem} task={item} />
-            ): (
-                <TodoItem 
-                _id={item._id} 
-                name={item.name} 
-                deleteItem={deleteItem}
-                getItem={getItem}
-                editItemState={editItemState}
-                completed={item.completed}
-                />
-            )
-            )}
-            {completed}   
+        <div className="container">
+            <div className="TodoWrapper">
+                <h1>
+                    TAREAS DEL DÍA<span>Una aplicación para empezar bien tu jornada</span>
+                </h1>
+                <TodoForm addItem={addItem}/>
+                {items.map((item) => 
+                item.isEditing ? (
+                    <EditTodoForm getItem={editItem} task={item} />
+                ): (
+                    <TodoItem 
+                    _id={item._id} 
+                    name={item.name} 
+                    deleteItem={deleteItem}
+                    getItem={getItem}
+                    editItemState={editItemState}
+                    completed={item.completed}
+                    />
+                )
+                )}
+                {completed}   
+            </div>
         </div>
     )
-
 }

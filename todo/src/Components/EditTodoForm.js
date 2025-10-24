@@ -11,7 +11,11 @@ export const EditTodoForm = ({getItem, task}) => {
     }
 
     const notify = () => {
-        toast.success('Datos de tarea actualizados');
+        toast.success('Datos de tarea actualizados',  {
+        style: {
+          padding: '16px',
+        },
+      });
     }
 
     return (

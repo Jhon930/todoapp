@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 
 export const TodoWrapper = () => {
 
-    const API_BASE = 'http://localhost:4001/todo'
+    const API_BASE = 'https://todoapp-api-zeta.vercel.app/todo'
 
     const [items, setItems] = useState([]);
     const [input, setInput] = useState("");

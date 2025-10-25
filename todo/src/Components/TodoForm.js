@@ -21,8 +21,12 @@ export const TodoForm = ({addItem}) => {
 
     return (
       <form onSubmit={handleSubmit} className="TodoForm">
-        <input type='text' className="todo-input" value={input} onChange={(e) => setInput(e.target.value)} placeholder='¿Cual es la tarea?'></input>
-        <button type="submit" className='todo-btn'>Agregar</button>
+        <input type='text' className="todo-input" id="descripcion" value={input} onChange={(e) => setInput(e.target.value)} placeholder='¿Cual es la tarea?'></input>
+        <button type="submit" className='todo-btn' id="btnAgregar">
+          <div className='buttonTitle'>
+            Agregar
+          </div>
+        </button>
         <Toaster
           position="top-right"
           gutter={8}  

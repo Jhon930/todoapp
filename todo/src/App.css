@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+  background: #07659c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ h1 {
   border: 1px solid #0b286c;
   padding: 0.5rem 1rem;
   margin-bottom: 3rem;
-  width: 333px;
+  width: 100%;
   height: 50px;
   color: #fff;
 }
@@ -108,4 +108,82 @@ h1 {
   margin-bottom: 0.7rem;
   margin-left: 3px;
   margin-top: 0.2rem;
+}
+
+.form-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer; 
+}
+
+.input-wrapper {
+  height: 54px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+#descripcion {
+  width: 100%;
+}
+
+#btnAgregar {
+  width: 40%;
+}
+
+
+div.title {
+  padding: 3px;
+}
+
+@media screen and (min-width: 601px) {
+  div.title {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.title {
+    font-size: 25px;
+  }
+}
+
+
+
+div.subtitle {
+  padding: 2px;
+}
+
+@media screen and (min-width: 601px) {
+  div.subtitle {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.subtitle {
+    font-size: 10px;
+  }
+}
+
+
+div.buttonTitle {
+  padding: 2px;
+}
+
+@media screen and (min-width: 601px) {
+  div.buttonTitle {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.buttonTitle {
+    font-size: 10px;
+  }
 }

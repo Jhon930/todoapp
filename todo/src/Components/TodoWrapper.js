@@ -160,10 +160,15 @@ export const TodoWrapper = () => {
     return (
         <div className="container">
             <div className="TodoWrapper">
-                <h1>
-                    TAREAS DEL DÍA<span>Una aplicación para empezar bien tu jornada</span>
-                </h1>
-                <TodoForm addItem={addItem}/>
+                <div className="title">
+                    TAREAS DEL DÍA
+                </div>
+                <div className="subtitle">
+                    <span>Una aplicación para empezar bien tu jornada</span> 
+                </div>   
+                <div className="row">
+                    <TodoForm addItem={addItem}/>
+                </div>
                 {items.map((item) => 
                 item.isEditing ? (
                     <EditTodoForm getItem={editItem} task={item} />

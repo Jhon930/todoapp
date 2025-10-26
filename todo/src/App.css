@@ -73,6 +73,16 @@ h1 {
   height: 50px;
 }
 
+.todo-btnActualizar {
+  background: #006280;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  height: 50px;
+}
+
+
 .Todo {
   display: flex;
   justify-content: space-between;
@@ -136,6 +146,9 @@ h1 {
   width: 40%;
 }
 
+#btnActualizar {
+  width: 40%;
+}
 
 div.title {
   padding: 3px;
@@ -167,7 +180,7 @@ div.subtitle {
 
 @media screen and (max-width: 600px) {
   div.subtitle {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -185,5 +198,22 @@ div.buttonTitle {
 @media screen and (max-width: 600px) {
   div.buttonTitle {
     font-size: 10px;
+  }
+}
+
+
+p.completed {
+  padding: 2px;
+}
+
+@media screen and (min-width: 601px) {
+  p.completed {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  p.completed {
+    font-size: 14px;
   }
 }

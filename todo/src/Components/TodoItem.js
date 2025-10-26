@@ -9,8 +9,8 @@ export const TodoItem = ({completed, _id, name, getItem, deleteItem, editItemSta
         <div className="Todo">
             <p className={`${completed === true ? 'completed' : ""}`} onClick={() => editItemState(_id, completed)}>{name}</p>
             <div>
-            <FontAwesomeIcon icon={faPenToSquare} onClick={() => getItem(_id)}/>
-            <FontAwesomeIcon icon={faTrash} onClick={() => deleteItem(_id)} />
+            <FontAwesomeIcon color="#ffcf49" icon={faPenToSquare} onClick={() => getItem(_id)}/>
+            <FontAwesomeIcon color="#ffcf49" icon={faTrash} onClick={() => deleteItem(_id)} />
             </div>
         </div>
     )

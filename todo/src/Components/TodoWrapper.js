@@ -115,10 +115,10 @@ export const TodoWrapper = () => {
                 style: {
                     border: '1px srgb(156, 18, 0)3200',
                     padding: '16px',
-                    color: '#C82909',
+                    color: '#FF512E',
                 },
                 iconTheme: {
-                    primary: '#C82909',
+                    primary: '#FF512E',
                     secondary: '#FFFAEE',
                 },
             });
@@ -135,7 +135,7 @@ export const TodoWrapper = () => {
     const notify = async (completed) => {
         console.log(completed);
         if(completed !== false) {
-            toast.success("Felicitaciones, completaste una tarea.",{
+            toast.success("Felicitaciones, has completado la tarea.",{
                 icon: '👏',
                 style: {
                     border: '0b286c',

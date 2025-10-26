@@ -11,7 +11,7 @@ export const EditTodoForm = ({getItem, task}) => {
     }
 
     const notify = () => {
-        toast.success('Datos de tarea actualizados',  {
+        toast.success('Tarea actualizada',  {
         style: {
           padding: '16px',
         },
@@ -21,7 +21,11 @@ export const EditTodoForm = ({getItem, task}) => {
     return (
         <form onSubmit={handleSubmit} className='TodoForm'>
             <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className='todo-input' placeholder='Actualice su tarea' />
-            <button type="submit" className='todo-btn'>Actualizar</button>
+            <button type="submit" className='todo-btnActualizar' id='btnActualizar'>
+              <div className='buttonTitle'>
+                Actualizar
+              </div>
+            </button>
             <Toaster
                 position="top-right"
                 gutter={8}  
